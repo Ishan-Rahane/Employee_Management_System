@@ -1,0 +1,30 @@
+micronaut:
+  application:
+    name: employeeManagementSystem
+  security:
+    enabled: true
+    authentication: bearer
+    token:
+      jwt:
+        enabled: true
+        signatures:
+          secret:
+            generator:
+              secret: 'cGxlYXNlQ2hhbmdlVGhpc1NlY3JldEZvckFOZXdPbmU='
+              base64: true
+              jws-algorithm: HS256
+netty:
+  default:
+    allocator:
+      max-order: 3
+aerospike:
+  host: 127.0.0.1
+  port: 3000
+  namespace: test
+credentials:
+  users:
+    admin: admin123
+    user1: user123
+  roles:
+    admin: ADMIN
+    user1: VIEW
